@@ -64,7 +64,7 @@ plot( intervalData$interval, intervalData$steps,
      
 )
 
-axis(side = 1,  at = seq(0,2400, by =200), labels = T)
+axis(side = 1,  at = seq(0,2400, by =400), labels = T)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 

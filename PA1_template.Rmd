@@ -53,7 +53,7 @@ plot( intervalData$interval, intervalData$steps,
      
 )
 
-axis(side = 1,  at = seq(0,2400, by =200), labels = T)
+axis(side = 1,  at = seq(0,2400, by =400), labels = T)
 ```
 
 ### Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
