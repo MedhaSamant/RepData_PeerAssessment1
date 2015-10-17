@@ -90,6 +90,7 @@ print(sum(is.na(activityData$steps)))
 ## [1] 2304
 ```
 ### Create a new dataset that is equal to the original dataset but with the missing data filled in.
+#### Replacing NA values with "mean steps for that particular interval for that particular day of the week""
 
 ```r
 activityData$dayOfWeek <- weekdays(activityData$date)

@@ -128,6 +128,8 @@ axis(side = 1,  at = seq(0,2400, by =200), labels = T)</code></pre>
 </div>
 <div id="create-a-new-dataset-that-is-equal-to-the-original-dataset-but-with-the-missing-data-filled-in." class="section level3">
 <h3>Create a new dataset that is equal to the original dataset but with the missing data filled in.</h3>
+<div id="replacing-na-values-with-mean-steps-for-that-particular-interval-for-that-particular-day-of-the-week" class="section level4">
+<h4>Replacing NA values with “mean steps for that particular interval for that particular day of the week”&quot;</h4>
 <pre class="r"><code>activityData$dayOfWeek &lt;- weekdays(activityData$date)
 meanStepsByIntervalDayOfWeek &lt;- ddply(activityData, c('interval', 'dayOfWeek'),
                                       summarise, avgSteps = mean(steps, na.rm=TRUE))
@@ -136,6 +138,7 @@ activityData &lt;- merge(activityData, meanStepsByIntervalDayOfWeek,
 )
 activityData$steps  &lt;- with(activityData, ifelse(is.na(activityData$steps), activityData$avgSteps, activityData$steps))
 aggDataNew &lt;- aggregate(steps ~ date, data = activityData, FUN=sum)</code></pre>
+</div>
 </div>
 <div id="histogram-of-the-total-number-of-steps-taken-each-day" class="section level3">
 <h3>Histogram of the total number of steps taken each day</h3>
